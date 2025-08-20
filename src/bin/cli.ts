@@ -8,10 +8,10 @@ async function main() {
     console.error("Usage: cli <imageDir> <usageDir> [--quality=number]");
     process.exit(1);
   }
-  let beforeParsing = qualityArg?.split("=")[1] || "50";
+  let beforeParsing = qualityArg?.split("=")[1] || "100";
   const quality = qualityArg?.startsWith("--quality=")
     ? parseInt(beforeParsing)
-    : 50;
+    : 100;
 
   const replacements = await optimizeImages(imgDir, quality);
   await updateUsages(replacements, useDir);
