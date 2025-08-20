@@ -6,7 +6,7 @@ import type { Replacements } from "./types.js";
 
 export async function optimizeImages(
   imgDir: string,
-  quality: number = 50
+  quality: number = 100
 ): Promise<Replacements> {
   const files = await glob(`${imgDir}/**/*.{png,jpg,jpeg}`);
   const replacements: Replacements = {};
